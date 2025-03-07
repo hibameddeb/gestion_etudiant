@@ -33,9 +33,7 @@ students_db = [
 def root():
     return {"message": "Welcome to the Student API!"}
 
-@app.get("/favicon.ico")
-def favicon():
-    return {}
+
 
 @app.get("/students", response_model=List[Student])
 def get_students():

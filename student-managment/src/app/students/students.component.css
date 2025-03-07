@@ -1,0 +1,233 @@
+/* Global Styles */
+body {
+  font-family: 'Poppins', sans-serif;
+  background: linear-gradient(135deg, #f4f7fc, #d1c4e9);
+  color: #444;
+  margin: 0;
+  padding: 0;
+}
+
+/* Main Container */
+.container {
+  max-width: 1200px;
+  margin-top: 50px;
+  padding: 40px;
+  background-color: #ffffff;
+  border-radius: 20px;
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+}
+
+/* Container Hover Effect */
+.container:hover {
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.15);
+}
+
+/* Title */
+h2 {
+  text-align: center;
+  font-size: 3rem;
+  font-weight: 700;
+  color: #6c63ff;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  margin-bottom: 40px;
+  position: relative;
+}
+
+h2::after {
+  content: '';
+  width: 60px;
+  height: 3px;
+  background-color: #6c63ff;
+  position: absolute;
+  bottom: -10px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+/* Card Styles */
+.card {
+  border-radius: 20px;
+  background: #ffffff;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  margin-bottom: 40px;
+  transition: all 0.3s ease;
+  overflow: hidden;
+}
+
+/* Card Header */
+.card-header {
+  background: linear-gradient(45deg, #6c63ff, #4f49cc);
+  color: white;
+  text-align: center;
+  font-size: 1.8rem;
+  padding: 20px 0;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+/* Card Body */
+.card-body {
+  padding: 30px;
+  background-color: #f9f9f9;
+  border-radius: 10px;
+}
+
+/* Form Styling */
+form {
+  display: flex;
+  flex-direction: column;
+}
+
+input.form-control {
+  font-size: 1.1rem;
+  padding: 12px;
+  margin-bottom: 20px;
+  border-radius: 8px;
+  border: 2px solid #ccc;
+  transition: all 0.3s ease;
+}
+
+input.form-control:focus {
+  border-color: #6c63ff;
+  box-shadow: 0 0 10px rgba(108, 99, 255, 0.3);
+}
+
+button.btn {
+  font-size: 1.2rem;
+  padding: 12px 25px;
+  font-weight: 600;
+  border-radius: 50px;
+  border: none;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+button.btn-primary {
+  background-color: #6c63ff;
+  color: white;
+}
+
+button.btn-primary:hover {
+  background-color: #5a52e0;
+  transform: translateY(-4px);
+}
+
+button.btn-secondary {
+  background-color: #f1f1f1;
+  color: #6c63ff;
+  border: 2px solid #6c63ff;
+}
+
+button.btn-secondary:hover {
+  background-color: #6c63ff;
+  color: white;
+  transform: translateY(-4px);
+}
+
+/* Table Styling */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 30px;
+  font-size: 1.1rem;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+}
+
+th, td {
+  padding: 15px;
+  text-align: center;
+  border-bottom: 2px solid #f0f0f0;
+}
+
+thead {
+  background-color: #6c63ff;
+  color: white;
+}
+
+tbody tr:nth-child(even) {
+  background-color: #fafafa;
+}
+
+tbody tr:hover {
+  background-color: #f1f1f1;
+  cursor: pointer;
+}
+
+tbody td {
+  color: #444;
+}
+
+/* Empty State */
+table td.text-center.text-muted {
+  font-style: italic;
+  color: #a8a8a8;
+  padding: 25px 0;
+}
+
+/* Action Buttons */
+button.btn-sm {
+  padding: 8px 15px;
+  font-size: 0.9rem;
+}
+
+button.btn-info {
+  background-color: #3b8eae;
+  color: white;
+}
+
+button.btn-info:hover {
+  background-color: #307b91;
+}
+
+button.btn-danger {
+  background-color: #e74c3c;
+  color: white;
+}
+
+button.btn-danger:hover {
+  background-color: #c0392b;
+}
+
+/* Flexbox for Buttons */
+.d-flex {
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+}
+
+/* Mobile Responsiveness */
+@media (max-width: 768px) {
+  .container {
+    padding: 20px;
+  }
+
+  h2 {
+    font-size: 2.5rem;
+  }
+
+  .card-header {
+    font-size: 1.5rem;
+  }
+
+  .card-body {
+    padding: 20px;
+  }
+
+  button.btn {
+    font-size: 1rem;
+    padding: 10px 20px;
+  }
+
+  table th, table td {
+    padding: 10px;
+  }
+
+  .d-flex {
+    flex-direction: column;
+    gap: 10px;
+  }
+}
