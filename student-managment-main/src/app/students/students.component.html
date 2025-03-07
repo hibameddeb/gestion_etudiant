@@ -1,0 +1,71 @@
+<div class="container mt-4">
+  <h2>Student Management</h2>
+  
+  <div class="card mb-4">
+    <div class="card-header">
+      <h3>{{ isEditMode ? 'Edit Student' : 'Add New Student' }}</h3>
+    </div>
+    <div class="card-body">
+      <form (ngSubmit)="saveStudent()">
+        <div class="mb-3" *ngIf="isEditMode">
+          <label for="id" class="form-label">ID</label>
+          <input type="text" class="form-control" id="id" [(ngModel)]="currentStudent.id" name="id" readonly>
+        </div>
+        
+        <div class="mb-3">
+          <label for="name" class="form-label">Name</label>
+          <input type="text" class="form-control" id="name" [(ngModel)]="currentStudent.name" name="name" required>
+        </div>
+        
+        <div class="mb-3">
+          <label for="age" class="form-label">Age</label>
+          <input type="number" class="form-control" id="age" [(ngModel)]="currentStudent.age" name="age" required>
+        </div>
+        
+        <div class="mb-3">
+          <label for="major" class="form-label">Major</label>
+          <input type="text" class="form-control" id="major" [(ngModel)]="currentStudent.major" name="major" required>
+        </div>
+        
+        <div class="d-flex gap-2">
+          <button type="submit" class="btn btn-primary">{{ isEditMode ? 'Update' : 'Add' }} Student</button>
+          <button type="button" class="btn btn-secondary" *ngIf="isEditMode" (click)="resetForm()">Cancel</button>
+        </div>
+      </form>
+    </div>
+  </div>
+  
+  <div class="card">
+    <div class="card-header">
+      <h3>Student List</h3>
+    </div>
+    <div class="card-body">
+      <table class="table table-striped">
+        <thead>
+          <tr>
+            <th>ID</th>
+            <th>Name</th>
+            <th>Age</th>
+            <th>Major</th>
+            <th>Actions</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let student of students">
+            <td>{{ student.id }}</td>
+            <td>{{ student.name }}</td>
+            <td>{{ student.age }}</td>
+            <td>{{ student.major }}</td>
+            <td>
+              <button class="btn btn-sm btn-info me-2" (click)="editStudent(student)">Edit</button>
+              <button class="btn btn-sm btn-danger" (click)="deleteStudent(student.id)">Delete</button>
+            </td>
+          </tr>
+          <tr *ngIf="students.length === 0">
+            <td colspan="5" class="text-center">No students found.</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>
